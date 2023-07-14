@@ -19,7 +19,7 @@ public class ItemServiceFeingProducto implements ItemService{
     @Override
     public List<Item> findAll() {
         return clienteFeingProducto.listarProductos().stream().map(p->
-            new Item(p,1)).collect(Collectors.toList());
+            new Item(p,2)).collect(Collectors.toList());
     }
 
     @Override
