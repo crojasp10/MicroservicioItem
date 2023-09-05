@@ -3,6 +3,7 @@ package com.microservices.microservicesitems.model.service;
 import com.microservices.microservicesitems.model.Item;
 import com.microservices.microservicesitems.model.Producto;
 import com.microservices.microservicesitems.model.clientesFeign.ProductoClienteRest;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +24,7 @@ public class ItemServiceFeingProducto implements ItemService{
     }
 
     @Override
+
     public Item findById(Long id, Integer cantidad) {
         return new Item(clienteFeingProducto.detalleProducto(id),cantidad);
     }
